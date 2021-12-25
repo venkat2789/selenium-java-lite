@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="14587" started-at="2021-12-25T15:08:42 EST" finished-at="2021-12-25T15:08:56 EST">
+  <suite name="Suite" duration-ms="17539" started-at="2021-12-25T15:22:35 EST" finished-at="2021-12-25T15:22:52 EST">
     <groups>
     </groups>
-    <test name="GoogleTest" duration-ms="14587" started-at="2021-12-25T15:08:42 EST" finished-at="2021-12-25T15:08:56 EST">
+    <test name="GoogleTest" duration-ms="17539" started-at="2021-12-25T15:22:35 EST" finished-at="2021-12-25T15:22:52 EST">
       <class name="com.google.tests.GoogleSearchTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.google.tests.GoogleSearchTest@71bbf57e]" name="setup" is-config="true" duration-ms="11298" started-at="2021-12-25T15:08:42 EST" finished-at="2021-12-25T15:08:53 EST">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.google.tests.GoogleSearchTest@704a52ec]" name="setup" is-config="true" duration-ms="15109" started-at="2021-12-25T15:22:35 EST" finished-at="2021-12-25T15:22:50 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="validateGoogleResult(java.lang.String, java.lang.String)[pri:0, instance:com.google.tests.GoogleSearchTest@71bbf57e]" name="validateGoogleResult" duration-ms="2958" started-at="2021-12-25T15:08:53 EST" data-provider="getData" finished-at="2021-12-25T15:08:56 EST">
+        <test-method status="PASS" signature="validateGoogleResult(java.lang.String, java.lang.String)[pri:0, instance:com.google.tests.GoogleSearchTest@704a52ec]" name="validateGoogleResult" duration-ms="1348" started-at="2021-12-25T15:22:50 EST" data-provider="getData" finished-at="2021-12-25T15:22:51 EST">
           <params>
             <param index="0">
               <value>
@@ -27,7 +27,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateGoogleResult -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.google.tests.GoogleSearchTest@71bbf57e]" name="tearDown" is-config="true" duration-ms="275" started-at="2021-12-25T15:08:56 EST" finished-at="2021-12-25T15:08:56 EST">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.google.tests.GoogleSearchTest@704a52ec]" name="tearDown" is-config="true" duration-ms="1036" started-at="2021-12-25T15:22:51 EST" finished-at="2021-12-25T15:22:52 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

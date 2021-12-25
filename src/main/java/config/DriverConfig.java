@@ -8,15 +8,16 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.InvalidArgumentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DriverConfig {
 	private WebDriver driver;
 	Properties props = new Properties();
 
 	// resource paths
-	private final String chromeDriverPath = "resources/chromedriver";
-	private final String geckoDriverPath = "resources/geckodriver";
 	private final String propsFilepath = "/resources/config.properties";
 
 	/**
@@ -30,12 +31,16 @@ public class DriverConfig {
 		System.out.println("Test to be executed on: " + getBrowser());
 		switch (getBrowser()) {
 		case "chrome":
-			System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 			break;
 		case "firefox":
-			System.setProperty("webdriver.gecko.driver", geckoDriverPath);
+			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
+			break;
+		case "edge":
+			WebDriverManager.edgedriver().setup();
+			driver = new EdgeDriver();
 			break;
 		default:
 			throw new InvalidArgumentException("Invalid browser/browser config doesnt exist");
