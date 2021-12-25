@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="11748" started-at="2021-12-25T12:19:39 EST" finished-at="2021-12-25T12:19:51 EST">
+    <groups>
+    </groups>
+    <test name="GoogleTest" duration-ms="11748" started-at="2021-12-25T12:19:39 EST" finished-at="2021-12-25T12:19:51 EST">
+      <class name="com.google.tests.GoogleSearchTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.google.tests.GoogleSearchTest@6eebc39e]" name="setup" is-config="true" duration-ms="9403" started-at="2021-12-25T12:19:39 EST" finished-at="2021-12-25T12:19:48 EST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="validateGoogleResult(java.lang.String, java.lang.String)[pri:0, instance:com.google.tests.GoogleSearchTest@6eebc39e]" name="validateGoogleResult" duration-ms="2141" started-at="2021-12-25T12:19:48 EST" data-provider="getData" finished-at="2021-12-25T12:19:50 EST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Selenium]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Selenium]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateGoogleResult -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.google.tests.GoogleSearchTest@6eebc39e]" name="tearDown" is-config="true" duration-ms="165" started-at="2021-12-25T12:19:50 EST" finished-at="2021-12-25T12:19:51 EST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.google.tests.GoogleSearchTest -->
+    </test> <!-- GoogleTest -->
+  </suite> <!-- Suite -->
+</testng-results>
