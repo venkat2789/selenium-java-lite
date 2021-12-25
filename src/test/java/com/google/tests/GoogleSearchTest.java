@@ -26,7 +26,7 @@ public class GoogleSearchTest extends DriverConfig {
 	@BeforeTest
 	public void setup() throws IOException {
 		driver = initializeDriver();
-		String url = getUrl("google-url");
+		String url = getUrl("url");
 		driver.get(url);
 	}
 
