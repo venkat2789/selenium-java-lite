@@ -6,6 +6,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -18,6 +20,7 @@ public class CommonFunctions {
 	private WebDriver driver;
 	private WebDriverWait wait;
 	private JavascriptExecutor js;
+	private Logger log = LogManager.getLogger(this.getClass());
 
 	public CommonFunctions(WebDriver driver) {
 		this.driver = driver;
@@ -59,25 +62,31 @@ public class CommonFunctions {
 	/**
 	 * take screenshot
 	 * 
-	 * @throws IOException
 	 */
-	public void takeScreenshot() throws IOException {
+	public void takeScreenshot() {
 		File scrnFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String currentDir = System.getProperty("user.dir");
-		FileUtils.copyFile(scrnFile, new File(currentDir + "/screenshots" + System.currentTimeMillis() + ".png"));
+		try {
+			FileUtils.copyFile(scrnFile, new File(currentDir + "/screenshots" + formatTimeSDF() + ".png"));
+		} catch (IOException e) {
+			log.error("Exception in takeScreenshot method: " + e.getMessage());
+		}
 	}
 
 	/**
 	 * take screenshot and name file with test name + time stamp
 	 * 
 	 * @param testName
-	 * @throws IOException
 	 */
-	public void takeScreenshot(String testName) throws IOException {
+	public void takeScreenshot(String testName) {
 		File scrnFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String currentDir = System.getProperty("user.dir");
-		FileUtils.copyFile(scrnFile,
-				new File(currentDir + "/screenshots/" + testName + "_" + formatTimeSDF() + ".png"));
+		try {
+			FileUtils.copyFile(scrnFile,
+					new File(currentDir + "/screenshots/" + testName + "_" + formatTimeSDF() + ".png"));
+		} catch (IOException e) {
+			log.error("Exception in takeScreenshot method: " + e.getMessage());
+		}
 	}
 
 	/**

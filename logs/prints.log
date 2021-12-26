@@ -1,0 +1,9 @@
+2021-12-25 19:30:51 [main] DEBUG com.google.tests.GoogleSearchTest - Loading properties
+2021-12-25 19:30:51 [main] DEBUG com.google.tests.GoogleSearchTest - Running on browser: chrome
+2021-12-25 19:30:56 [main] DEBUG com.google.tests.GoogleSearchTest - Driver initialized
+2021-12-25 19:30:57 [main] INFO  com.google.tests.GoogleSearchTest - Launching URL: https://www.google.com
+2021-12-25 19:30:58 [main] INFO  com.google.pages.GoogleSearchPage - Search bar found
+2021-12-25 19:30:58 [main] INFO  com.google.pages.GoogleSearchPage - Entered text: Selenium
+2021-12-25 19:31:00 [main] INFO  com.google.pages.GoogleResultsPage - Result found: Selenium
+2021-12-25 19:31:00 [main] DEBUG com.google.tests.GoogleSearchTest - End of Test. Closing driver
+

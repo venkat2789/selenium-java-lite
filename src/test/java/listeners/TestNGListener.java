@@ -1,7 +1,7 @@
 package listeners;
 
-import java.io.IOException;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -12,6 +12,7 @@ import utilities.CommonFunctions;
 public class TestNGListener implements ITestListener {
 	private WebDriver driver;
 	CommonFunctions functions;
+	private Logger log = LogManager.getLogger(this.getClass());
 
 	public void onTestStart(ITestResult result) {
 	}
@@ -23,15 +24,12 @@ public class TestNGListener implements ITestListener {
 		try {
 			driver = (WebDriver) result.getTestClass().getRealClass().getDeclaredField("driver")
 					.get(result.getInstance());// get driver instance
-		} catch (IllegalArgumentException | IllegalAccessException | NoSuchFieldException | SecurityException e1) {
-			e1.printStackTrace();
+		} catch (IllegalArgumentException | IllegalAccessException | NoSuchFieldException | SecurityException e) {
+			log.error("Exception in TestNG Listener" + e.getMessage());
 		}
+
 		functions = new CommonFunctions(driver);
-		try {
-			functions.takeScreenshot(result.getName());// take screenshot with test name
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		functions.takeScreenshot(result.getName());// take screenshot with test name
 
 	}
 

@@ -1,12 +1,14 @@
 package com.google.tests;
 
-import java.io.IOException;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.google.pages.GoogleResultsPage;
@@ -14,20 +16,18 @@ import com.google.pages.GoogleSearchPage;
 
 import config.DriverConfig;
 
-//@Listeners(listeners.TestNGListener.class)
+@Listeners(listeners.TestNGListener.class)
 public class GoogleSearchTest extends DriverConfig {
-	private WebDriver driver;
+	public WebDriver driver;
+	private Logger log = LogManager.getLogger(GoogleSearchTest.class.getName());
 
 	/**
-	 * initializes driver, launches home page URL
+	 * initializes driver
 	 * 
-	 * @throws IOException
 	 */
 	@BeforeTest
-	public void setup() throws IOException {
+	public void setup() {
 		driver = initializeDriver();
-		String url = getUrl("url");
-		driver.get(url);
 	}
 
 	/**
@@ -38,6 +38,17 @@ public class GoogleSearchTest extends DriverConfig {
 	@DataProvider
 	public Object[][] getData() {
 		return new Object[][] { { "Selenium", "Selenium" } };
+	}
+
+	/**
+	 * launches home page URL
+	 * 
+	 */
+	@BeforeMethod
+	public void launchURL() {
+		String url = getUrl("url");
+		log.info("Launching URL: " + url);
+		driver.get(url);
 	}
 
 	/**
@@ -63,7 +74,7 @@ public class GoogleSearchTest extends DriverConfig {
 	@AfterTest
 	public void tearDown() {
 		if (driver != null) {
-			System.out.println("---End of test---");
+			log.debug("End of Test. Closing driver" + System.lineSeparator());
 			driver.close();
 		}
 	}
