@@ -7,3 +7,12 @@
 2021-12-25 19:31:00 [main] INFO  com.google.pages.GoogleResultsPage - Result found: Selenium
 2021-12-25 19:31:00 [main] DEBUG com.google.tests.GoogleSearchTest - End of Test. Closing driver
 
+2021-12-25 19:36:45 [main] DEBUG com.google.tests.GoogleSearchTest - Loading properties
+2021-12-25 19:36:45 [main] DEBUG com.google.tests.GoogleSearchTest - Running on browser: chrome
+2021-12-25 19:36:53 [main] DEBUG com.google.tests.GoogleSearchTest - Driver initialized
+2021-12-25 19:36:53 [main] INFO  com.google.tests.GoogleSearchTest - Launching URL: https://www.google.com
+2021-12-25 19:36:54 [main] INFO  com.google.pages.GoogleSearchPage - Search bar found
+2021-12-25 19:36:54 [main] INFO  com.google.pages.GoogleSearchPage - Entered text: Selenium
+2021-12-25 19:36:56 [main] INFO  com.google.pages.GoogleResultsPage - Result found: Selenium
+2021-12-25 19:36:56 [main] DEBUG com.google.tests.GoogleSearchTest - End of Test. Closing driver
+
