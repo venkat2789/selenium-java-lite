@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="11748" started-at="2021-12-25T12:19:39 EST" finished-at="2021-12-25T12:19:51 EST">
+  <suite started-at="2022-12-17T20:08:41 EST" name="Suite" finished-at="2022-12-17T20:09:19 EST" duration-ms="37874">
     <groups>
     </groups>
-    <test name="GoogleTest" duration-ms="11748" started-at="2021-12-25T12:19:39 EST" finished-at="2021-12-25T12:19:51 EST">
+    <test started-at="2022-12-17T20:08:41 EST" name="GoogleTest" finished-at="2022-12-17T20:09:19 EST" duration-ms="37874">
       <class name="com.google.tests.GoogleSearchTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.google.tests.GoogleSearchTest@6eebc39e]" name="setup" is-config="true" duration-ms="9403" started-at="2021-12-25T12:19:39 EST" finished-at="2021-12-25T12:19:48 EST">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.google.tests.GoogleSearchTest@12bcd0c0]" started-at="2022-12-17T20:08:41 EST" name="setup" finished-at="2022-12-17T20:08:49 EST" duration-ms="7238" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="validateGoogleResult(java.lang.String, java.lang.String)[pri:0, instance:com.google.tests.GoogleSearchTest@6eebc39e]" name="validateGoogleResult" duration-ms="2141" started-at="2021-12-25T12:19:48 EST" data-provider="getData" finished-at="2021-12-25T12:19:50 EST">
+        <test-method is-config="true" signature="launchURL()[pri:0, instance:com.google.tests.GoogleSearchTest@12bcd0c0]" started-at="2022-12-17T20:08:49 EST" name="launchURL" finished-at="2022-12-17T20:08:50 EST" duration-ms="1899" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchURL -->
+        <test-method signature="validateGoogleResult(java.lang.String,java.lang.String)[pri:0, instance:com.google.tests.GoogleSearchTest@12bcd0c0]" started-at="2022-12-17T20:08:50 EST" name="validateGoogleResult" data-provider="getData" finished-at="2022-12-17T20:08:54 EST" duration-ms="3852" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -27,7 +31,108 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateGoogleResult -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.google.tests.GoogleSearchTest@6eebc39e]" name="tearDown" is-config="true" duration-ms="165" started-at="2021-12-25T12:19:50 EST" finished-at="2021-12-25T12:19:51 EST">
+        <test-method is-config="true" signature="launchURL()[pri:0, instance:com.google.tests.GoogleSearchTest@12bcd0c0]" started-at="2022-12-17T20:08:54 EST" name="launchURL" finished-at="2022-12-17T20:08:55 EST" duration-ms="421" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchURL -->
+        <test-method signature="validateGoogleResult(java.lang.String,java.lang.String)[pri:0, instance:com.google.tests.GoogleSearchTest@12bcd0c0]" started-at="2022-12-17T20:08:55 EST" name="validateGoogleResult" data-provider="getData" finished-at="2022-12-17T20:09:18 EST" duration-ms="23500" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[RandomText]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //a[contains(@href, 'selenium.dev')]/h3' (tried for 15 second(s) with 500 milliseconds interval)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //a[contains(@href, 'selenium.dev')]/h3' (tried for 15 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+at utilities.CommonFunctions.waitForElement(CommonFunctions.java:38)
+at com.google.pages.GoogleResultsPage.getFirstResult(GoogleResultsPage.java:35)
+at com.google.tests.GoogleSearchTest.validateGoogleResult(GoogleSearchTest.java:66)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:386)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:323)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:143)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[contains(@href, 'selenium.dev')]/h3"}
+  (Session info: chrome=108.0.5359.124)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.7.2', revision: '4d4020c3b7'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '11.5', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d07bc6f0fedcbedc740a961884b65fe7, findElement {using=xpath, value=//a[contains(@href, 'selenium.dev')]/h3}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.124, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: /var/folders/34/602ct6f909s...}, goog:chromeOptions: {debuggerAddress: localhost:62238}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:62238/devtoo..., se:cdpVersion: 108.0.5359.124, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: d07bc6f0fedcbedc740a961884b65fe7
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:535)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:351)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:343)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+at jdk.proxy2/jdk.proxy2.$Proxy31.isDisplayed(Unknown Source)
+at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:307)
+at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:40)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:293)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:660)
+at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+... 34 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateGoogleResult -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.google.tests.GoogleSearchTest@12bcd0c0]" started-at="2022-12-17T20:09:19 EST" name="tearDown" finished-at="2022-12-17T20:09:19 EST" duration-ms="200" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

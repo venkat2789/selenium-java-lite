@@ -2,8 +2,8 @@ package config;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -11,8 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.manager.SeleniumManager;
 
 public class DriverConfig {
 	private WebDriver driver;
@@ -32,15 +31,15 @@ public class DriverConfig {
 		log.debug("Running on browser: " + getBrowser());
 		switch (getBrowser()) {
 		case "chrome":
-			WebDriverManager.chromedriver().setup();
+			SeleniumManager.getInstance();
 			driver = new ChromeDriver();
 			break;
 		case "firefox":
-			WebDriverManager.firefoxdriver().setup();
+			SeleniumManager.getInstance();
 			driver = new FirefoxDriver();
 			break;
 		case "edge":
-			WebDriverManager.edgedriver().setup();
+			SeleniumManager.getInstance();
 			driver = new EdgeDriver();
 			break;
 		default:
@@ -48,7 +47,7 @@ public class DriverConfig {
 		}
 		log.debug("Driver initialized");
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		return driver;
 	}
 

@@ -1,4 +1,19 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.457 s - in TestSuite
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 39.158 s <<< FAILURE! - in TestSuite
+validateGoogleResult(com.google.tests.GoogleSearchTest)  Time elapsed: 23.51 s  <<< FAILURE!
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //a[contains(@href, 'selenium.dev')]/h3' (tried for 15 second(s) with 500 milliseconds interval)
+	at com.google.tests.GoogleSearchTest.validateGoogleResult(GoogleSearchTest.java:66)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//a[contains(@href, 'selenium.dev')]/h3"}
+  (Session info: chrome=108.0.5359.124)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.7.2', revision: '4d4020c3b7'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '11.5', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d07bc6f0fedcbedc740a961884b65fe7, findElement {using=xpath, value=//a[contains(@href, 'selenium.dev')]/h3}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.124, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: /var/folders/34/602ct6f909s...}, goog:chromeOptions: {debuggerAddress: localhost:62238}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:62238/devtoo..., se:cdpVersion: 108.0.5359.124, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: d07bc6f0fedcbedc740a961884b65fe7
+	at com.google.tests.GoogleSearchTest.validateGoogleResult(GoogleSearchTest.java:66)
+

@@ -3,6 +3,7 @@ package utilities;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
@@ -24,7 +25,7 @@ public class CommonFunctions {
 
 	public CommonFunctions(WebDriver driver) {
 		this.driver = driver;
-		this.wait = new WebDriverWait(driver, 15);
+		this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 	}
 
 	/**
